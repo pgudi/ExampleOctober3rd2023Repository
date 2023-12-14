@@ -42,7 +42,7 @@ public class ArrayListDemo {
 		obj.add(0,"Berry");
 		obj.add("Pineapple");
 		obj.add("Guava");
-		System.out.println("Elements :"+obj);
+		System.out.println("Elements :"+obj);		
 		obj.remove("Apple");
 		System.out.println("Elements :"+obj);
 		obj.remove(0);

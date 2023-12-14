@@ -16,7 +16,7 @@ public class LoginLogoutScenario {
 		try
 		{
 			oBrowser=new ChromeDriver();
-			Assert.assertNotNull(oBrowser);
+			Assert.assertTrue(oBrowser!=null);
 		}catch (Exception e) 
 		{
 			e.printStackTrace();
@@ -28,9 +28,14 @@ public class LoginLogoutScenario {
 	{
 		try
 		{
-			oBrowser.navigate().to(url);
-			String title=oBrowser.getTitle();
-			Assert.assertEquals("actiTIME - Login", title);
+			/*
+			 * String expected="actiTIME - Login"; oBrowser.navigate().to(url); String
+			 * title=oBrowser.getTitle(); Assert.assertEquals(expected, title);
+			 */
+			oBrowser.get(url);
+			Thread.sleep(5000);
+			WebElement oEle=oBrowser.findElement(By.xpath("//div[text()='Login ']"));
+			Assert.assertTrue(oEle.isDisplayed());
 		}catch (Exception e) 
 		{
 			e.printStackTrace();
