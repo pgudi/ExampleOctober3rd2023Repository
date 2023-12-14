@@ -45,7 +45,6 @@ public class ReadAndWriteExcelContentDemo {
 				if(rowsh2==null)
 				{
 					rowsh2=sh2.createRow(r);
-
 				}
 				int cc=rowsh1.getPhysicalNumberOfCells();
 				for(int c=0;c<cc;c++)

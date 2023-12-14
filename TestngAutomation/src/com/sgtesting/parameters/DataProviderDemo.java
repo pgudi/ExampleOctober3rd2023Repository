@@ -18,6 +18,6 @@ public class DataProviderDemo {
 	{
 		return new Object[][] {{"santosh","Welcome1"},
 			{"syed","Welcome2"},
-			{"Bagyashree","Welcome3"}};
+			{"Bhagyashri","Welcome3"}};
 	}
 }
