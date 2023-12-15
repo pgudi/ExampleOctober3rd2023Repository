@@ -22,6 +22,13 @@ public class CSSSelectorDemo {
 	//	relativeCSSWithTagNameWithMultipleAttributeNameValueCombination();
 	//	relativeCSSWithAttributeNameValueCombination();
 	//	relativeCSSWithTagNameAndAttributeName();
+	//	relativeCSSWithTagNameAndAttributeName_1();
+	//	relativeCSSWithTagNameAndAttributeName_2();
+	//	relativeCSSWithTagNameAndAttributeName_3();
+	//	relativeCSSWithTagNameWithPartialMatchingofAttributeNameValueCombination();
+	//	relativeCSSBasedOnParentIdentifyChildElement();
+	//	relativeCSSBasedOnNthChildElement();
+		relativeCSSBasedOnSibling();
 	}
 	
 	private static void launchBrowser()
@@ -133,5 +140,103 @@ public class CSSSelectorDemo {
 		//Find out Number of Links in the Web Page
 		List<WebElement> olists=oBrowser.findElements(By.cssSelector("a[href]"));
 		System.out.println("# of Links in the Page :"+olists.size());
+	}
+	
+	private static void relativeCSSWithTagNameAndAttributeName_1()
+	{
+		//Display Name of the Links
+		List<WebElement> olists=oBrowser.findElements(By.cssSelector("a[href]"));
+		
+		for(int i=0;i<olists.size();i++)
+		{
+			WebElement oLink=olists.get(i);
+			String name=oLink.getText();
+			System.out.println(name);
+		}
+	}
+	
+	private static void relativeCSSWithTagNameAndAttributeName_2()
+	{
+		try
+		{
+			//Based on Ends With identify the Element
+			List<WebElement> olists=oBrowser.findElements(By.cssSelector("a[href]"));
+			
+			for(int i=0;i<olists.size();i++)
+			{
+				WebElement oLink=olists.get(i);
+				String name=oLink.getText();
+				System.out.println(name);
+				if(name.endsWith("Apache"))
+				{
+					oLink.click();
+					Thread.sleep(3000);
+					break;
+				}
+			}
+			oBrowser.navigate().back();
+		}catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
+	
+	private static void relativeCSSWithTagNameAndAttributeName_3()
+	{
+		// org.openqa.selenium.StaleElementReferenceException: 
+		// stale element reference: stale element not found
+		List<WebElement> olists=oBrowser.findElements(By.cssSelector("a[href]"));
+		
+		for(int i=0;i<olists.size();i++)
+		{
+			WebElement oLink=olists.get(i);
+			String name=oLink.getText();
+			if(name.equals("S G Software Testing"))
+			{
+				oLink.click();
+			}
+		}
+	}
+	
+	/**
+	 * case 10: Identify Element based on tagName with 
+	 *  Partial Matching of attribute Name and value combinatin
+	 * Syntax : <tagName>[attributeName ^= attributeValue]    starts-with
+	 * Syntax : <tagName>[attributeName *= attributeValue]	  contains
+	 * Syntax : <tagName>[attributeName $= attributeValue]	  ends-with
+	 */
+	private static void relativeCSSWithTagNameWithPartialMatchingofAttributeNameValueCombination()
+	{
+	//	oBrowser.findElement(By.cssSelector("input[id ^='btn1']")).click();
+	//	oBrowser.findElement(By.cssSelector("input[id *='submit']")).click();
+		oBrowser.findElement(By.cssSelector("input[id $='button1']")).click();
+	}
+	
+	/**
+	 * Case 11: Based on Parent Element identify the Child Element
+	 */
+	private static void relativeCSSBasedOnParentIdentifyChildElement()
+	{
+		oBrowser.findElement(By.cssSelector("#frm2 >input")).click();
+	}
+	
+	/**
+	 * Case 12: Based on Parent Element identify the Child Element
+	 */
+	private static void relativeCSSBasedOnNthChildElement()
+	{
+		oBrowser.findElement(By.cssSelector("#frm3 :first-child")).sendKeys("Demouser1");
+		oBrowser.findElement(By.cssSelector("#frm3 :nth-child(2)")).sendKeys("Demouser2");
+		oBrowser.findElement(By.cssSelector("#frm3 :nth-child(3)")).sendKeys("Demouser3");
+		oBrowser.findElement(By.cssSelector("#frm3 :nth-child(4)")).sendKeys("Demouser4");
+		oBrowser.findElement(By.cssSelector("#frm3 :nth-child(5)")).sendKeys("Demouser5");
+		oBrowser.findElement(By.cssSelector("#frm3 :last-child")).sendKeys("Demouser10");
+	}
+	
+	/**
+	 * Case 13: Based on sibling identify the Element
+	 */
+	private static void relativeCSSBasedOnSibling()
+	{
+		oBrowser.findElement(By.cssSelector("#frm3 >input + input + input + input")).sendKeys("DemoUser4");
 	}
 }
