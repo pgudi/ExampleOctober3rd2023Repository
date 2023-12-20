@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<suite name="testcases">
+	<test name="unit Testcases">
+		<classes>
+			<class name="com.sgtesting.tests.testcases.LoginLogoutScenario"></class>
+		</classes>
+	</test>
+</suite>
