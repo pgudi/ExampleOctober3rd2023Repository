@@ -66,7 +66,7 @@ public class ActiTimeStepDefinition {
 			log.info("Navigate to the url of the application");
 			oBrowser.get("http://localhost/login.do");
 			ApplicationIndependent.waitFor(5L);
-			ApplicationDependent.getScreenshot(oBrowser, "E:\\EXAMPLE\\ActTime.jpg");
+			
 			log.info("Navigate to the url of the application has performed successfully");
 		}catch(Exception e)
 		{

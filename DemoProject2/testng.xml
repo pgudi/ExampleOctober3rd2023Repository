@@ -2,7 +2,7 @@
 <suite name="testcases">
 	<test name="unit Testcases">
 		<classes>
-			<class name="com.sgtesting.tests.testcases.LoginLogoutScenario"></class>
+			<class name="com.sgtesting.tests.testcases.ChromeBrowserLoginLogoutDemo"></class>
 		</classes>
 	</test>
 </suite>

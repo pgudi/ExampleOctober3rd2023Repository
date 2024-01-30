@@ -13,9 +13,9 @@ public class CreateUserScenario {
 		login();
 		minimizeFlyOutWindow();
 		createUser();
-		deleteUser();
-		logout();
-		closeApplication();
+	//	deleteUser();
+	//	logout();
+	//	closeApplication();
 	}
 	
 	private static void launchBrowser()
