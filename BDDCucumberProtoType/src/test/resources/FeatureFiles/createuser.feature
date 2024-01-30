@@ -6,6 +6,7 @@
 # Feature Name:
 # User Story Number:
 # Description:
+
 Feature: Validate Create User functionality
 Description: This feature verifies Create User functionality.
 

@@ -11,7 +11,8 @@ import cucumber.api.testng.TestNGCucumberRunner;
 
 @CucumberOptions(
 	features="src\\test\\resources\\FeatureFiles",
-	glue="com.sgtesting.tests.stepdefinitions"
+	glue="com.sgtesting.tests.stepdefinitions",
+	tags = "@Execute"
 		)
 public class DriverScript {
 

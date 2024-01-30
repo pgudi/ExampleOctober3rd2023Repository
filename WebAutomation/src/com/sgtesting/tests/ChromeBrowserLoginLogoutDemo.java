@@ -1,5 +1,7 @@
 package com.sgtesting.tests;
 
+import java.time.Duration;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -31,7 +33,8 @@ public class ChromeBrowserLoginLogoutDemo {
 		try
 		{
 			oBrowser.get("http://localhost/login.do");
-			Thread.sleep(5000);
+			oBrowser.manage().timeouts().implicitlyWait(Duration.ofSeconds(30));
+			oBrowser.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(30));
 		}catch (Exception e) {
 			e.printStackTrace();
 		}

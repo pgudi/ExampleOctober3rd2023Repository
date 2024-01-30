@@ -6,6 +6,7 @@
 # Feature Name:
 # User Story Number:
 # Description:
+
 Feature: Validate Modify User functionality
 Description: This feature verifies Modify User functionality.
 
@@ -31,6 +32,8 @@ And I enter the user password in retypepassword text field
 And I click on Create User button
 Then I find the created user
 When I click on the existing user
-And I clear the email in email text field
-And I enter the email in email text field
-Then I click on Save User button
+And I click on delete user button
+And I click on OK button in Alert window to delete User
+When I click on logout link
+Then I find the Login page
+And I close the application
